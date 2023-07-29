@@ -6,37 +6,32 @@ without repeating characters.
 
 */
 
+/*
+I solved the the algorthim using sliding window technique
 
-/**
- * @param {string} s
- * @return {number}
- */
-
+*/
 
 
-const lengthOfLongestSubstring = (string)=> {
-    let maxLong=0;
-   if( string.length == 0  || string.length== 1) {
-      return string.length;
-       }
-    for(let i=0; i<string.length; i++){
-        let seen= {};
-        let currentLength=0;
-            
-        for(let j=i; j<string.length; j++){
-            
-            if(!seen[string[j]]){
-                seen[string[j]]= true;
-                currentLength +=1;
-                 maxLong= Math.max(currentLength, maxLong);
-            }else{
-               
-                break;
-            }
-        }
+
+let longest= (sam)=>{
+    let p1=0;
+    let p2=0;
+   let seenChar= {};
+  let longest=0;
+  for(let p2=0; p2< sam.length; p2++ ){
+      let currentChar = sam[p2];
+  
+    if(seenChar [currentChar]>= p1){
+        p1=seenChar [currentChar]+1;
+  
     }
-    
-return maxLong;
+       seenChar[currentChar]=p2;
+  longest= Math.max(longest, p2-p1+1);
+  
+  }
+  
+  
+  return longest
 }
 
 
