@@ -1,5 +1,5 @@
 
-function F2(A, N) {
+function Sum(A, N) {
     if (N === 0) {
         return 0;
     }
@@ -7,5 +7,5 @@ function F2(A, N) {
 }
 
 let arr = [1, 5, 7];
-let result = F2(arr, arr.length);
+let result = Sum(arr, arr.length);
 console.log(result);
