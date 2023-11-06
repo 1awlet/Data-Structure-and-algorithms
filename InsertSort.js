@@ -1,17 +1,17 @@
+function insertionSort(A, N) {
+    for (let j = 1; j < N; j++) {
+        let ins = A[j];
+        let i = j - 1;
 
-function InsertionSort(A,N)
+        while (i >= 0 && ins < A[i]) {
+            A[i + 1] = A[i];
+            i = i - 1;
+        }
 
-for 1 <=j  <= N-1 do
+        A[i + 1] = ins;
+    }
+}
 
-ins=A[J]
-i=j-1
-
-while(i>=0 and ins <A[i])
-  A8[i+1]=A[i]
-  i=1-1
-
-end while
-
-A[i+1]= ins
-end for 
-end function
+const arrayToSort = [5, 3, 1, 4, 2];
+insertionSort(arrayToSort, arrayToSort.length);
+console.log(arrayToSort); // This will output the sorted array
