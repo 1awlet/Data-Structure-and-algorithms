@@ -1,18 +1,27 @@
+function bubbleSort(A, N) {
+    let swapped = true;
 
-function BubbleSort(A,N)
- swapped=true
+    while (swapped) {
+        swapped = false;
 
-while(swapped) do
- swapped= false
+        for (let i = 0; i < N - 1; i++) {
+            if (A[i] > A[i + 1]) {
+                // Swap A[i] and A[i+1]
+                let temp = A[i];
+                A[i] = A[i + 1];
+                A[i + 1] = temp;
 
-for 0 <= i <N-1 do
- if (A[i] > A[i+1]) then
-  swap(A[i], A[i+1)
-  swapped=true
-end if
+                swapped = true;
+            }
+        }
 
-end for 
-N= N-1
-end while 
-return A
-end function
+        N = N - 1;
+    }
+
+    return A;
+}
+
+// Example
+const arrayToSort = [5, 3, 1, 4, 2];
+const sortedArray = bubbleSort(arrayToSort, arrayToSort.length);
+console.log(sortedArray); // This will output the sorted array
