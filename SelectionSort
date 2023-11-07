@@ -20,6 +20,11 @@ function selectionSort(A) {
     }
 }
 
+//This is another optimizaton that can be done
+function optimizedSort(arr) {
+    return arr.sort((a, b) => a - b);
+}
+
 
 const arr = [64, 25, 12, 22, 11];
 selectionSort(arr);
