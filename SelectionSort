@@ -1,15 +1,26 @@
-# Pseudocode for the Selection Sort algorithm
-Function SelectionSort(A, N)
-
-    # Iterate through the elements of the array
-    For (i = 0; i < N - 1) do
-
-        # Find the index of the minimum element in the unsorted portion of the array
-        min = pos_min(A, i, N - 1)
+function selectionSort(A) {
+    const N = A.length;
+    
+    for (let i = 0; i < N - 1; i++) {
+        let min = i;
         
-        # Swap the current element (A[i]) with the minimum element (A[min])
-        Swap(A[i], A[min])
+        // Find the index of the minimum element in the unsorted portion of the array
+        for (let j = i + 1; j < N; j++) {
+            if (A[j] < A[min]) {
+                min = j;
+            }
+        }
         
-    End for
+        // Swap the current element (A[i]) with the minimum element (A[min])
+        if (min !== i) {
+            const temp = A[i];
+            A[i] = A[min];
+            A[min] = temp;
+        }
+    }
+}
 
-End function
+
+const arr = [64, 25, 12, 22, 11];
+selectionSort(arr);
+console.log("Sorted array: " + arr);
