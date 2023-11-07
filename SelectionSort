@@ -1,1 +1,8 @@
+Function SelectionSort(A,N)
 
+For ( 0<= i < N-1 do
+ min=pos_min(A,iN-1)
+Swap(A[i], A[min]
+End for
+
+End functon
