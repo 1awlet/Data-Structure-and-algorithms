@@ -4,6 +4,7 @@ Given an integer x, return true if x is a
 palindrome and false otherwise.
 */
 
+// we using two pointer techniques 
 let isPalindrome = (word)=>{
    word = word = word.replace(/[^A-Za-z0-9 ]/g, "");
     word = word.replace(/\s/g, "").toLowerCase();
