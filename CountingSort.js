@@ -1,21 +1,31 @@
+function countingSort(A, K) {
+ 
+  let C = new Array(K + 1).fill(0);
+  let R = new Array(A.length).fill(0);
 
-Function counting-sort(A,K)
-C --> new array(k+1) of zeros
-R --> new array(length(A)) of zeros
+ 
+  for (let j = 0; j < A.length; j++) {
+    C[A[j]] += 1;
+  }
+ 
+  for (let i = 1; i < C.length; i++) {
+    C[i] += C[i - 1];
+  }
+ 
+  let post = 0;
+  for (let i = 0; i < C.length; i++) {
+    for (let r = post; r < post + C[i]; r++) {
+      R[r] = i;
+    }
+    post += C[i];
+  }
 
-Post --> 0
+  return R;
+}
+ 
+const inputArray = [4, 2, 2, 8, 3, 3, 1];
+const maxValue = Math.max(...inputArray);
+const sortedArray = countingSort(inputArray, maxValue);
 
-For 0<=j <length(A) do
-c[A[j]] +1
-End for
-
-For 0 < i < (k+1) do
-For pos <= r < post+c[i] do
-R[r]=i
-End for
-Post = r
-End for
-
-Return R
-
-End function
+console.log("Input Array:", inputArray);
+console.log("Sorted Array:", sortedArray);
