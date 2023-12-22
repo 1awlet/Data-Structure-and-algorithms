@@ -5,11 +5,9 @@ function findNum(A, n, chosenNum){
         return true
     }
     
-          
     if(n== 0){
         return false
     }
-
     
  return   findNum(A,n-1, chosenNum)
 }
