@@ -7,9 +7,6 @@ I solved the the algorthim using sliding window technique
 
 */
 
-/*
-
-*/
 
 
 
