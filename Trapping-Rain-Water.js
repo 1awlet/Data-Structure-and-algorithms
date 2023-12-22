@@ -31,7 +31,6 @@ var trap= (arr) => {
                 total+= maxR- arr[p2]; 
             }
              p2--;
-            
         }
 
     }
