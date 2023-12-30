@@ -40,4 +40,4 @@ const encryptText = (key, plainText) => {
     return encryptedText;
 }
 
-encryptText("Secret", "Hello");
+encryptText("”THISISANEXAMPLEKEYINCOMPUTERSECURITYEXAM”", "Gele");
