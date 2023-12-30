@@ -1,56 +1,43 @@
-
-
 const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
+const encryptMessage = (key, plainText) => {
 
+    let encryptedMessage = "";
+    let secretKeyCount = 0;
 
-const mapAlphabetsToNumbers = (key,plainText)=>{
-    let decryptedMessage ="";
-    let secretKeyCount= 0;
-    
-    for(let letter in plainText){
-        const textLetterNumber = alphabet.indexOf(plainText[letter])
-          
-          if(key.length <= secretKeyCount){
-           secretKeyCount=0;
-            }
-    
+    for (let i = 0; i < plainText.length; i++) {
+        // key loops which makes it always at least be equal or it can be greater
+        if (secretKeyCount >= key.length) {
+            secretKeyCount = 0;
+        }
+        // assigning each letter to a number
+        const textLetterNumber = alphabet.indexOf(plainText[i]);
         const keyLetterToNumber = alphabet.indexOf(key[secretKeyCount]);
+        
+        let cipherNumber = (textLetterNumber + keyLetterToNumber) % 26;
        
-       
-    
-       if(textLetterNumber + keyLetterToNumber <= 25){
-          
-           const ciperAdding = textLetterNumber + keyLetterToNumber;
-
-          const decryptedLetter = alphabet[ciperAdding]
-       
-         decryptedMessage += decryptedLetter;
-          console.log(decryptedMessage)
-       }else{
-          const ciperAdding = (textLetterNumber + keyLetterToNumber) % 26
-           
-       }
-       
-    
+        
+        encryptedMessage += alphabet[cipherNumber];
         secretKeyCount++;
     }
     
-    
-   
-
+    return encryptedMessage;
 }
 
-const decryptText = (key, plainText)=>{
-    if(/^[A-Z]+$/.test(plainText) === false){
-        console.log("please change the text to capital letter")
-        return
+const encryptText = (key, plainText) => {
+        //Turning massage to capital letters
+        plainText= plainText.toUpperCase();
+        key = key.toUpperCase();
+    
+ // Check if the text contains only letters A-Z
+    if (!/^[A-Z]+$/.test(plainText) || !/^[A-Z]+$/.test(key)) {
+        console.log("Please only use alphabets from A-Z for both the plaintext and the key.");
+        return;
     }
     
-    const mappedTextToKey= mapAlphabetsToNumbers (key,plainText);
-    
-
+    const encryptedText = encryptMessage(key, plainText);
+    console.log(encryptedText);
+    return encryptedText;
 }
 
-
-decryptText("BANANA", "ILOVEPEANUTS")
+encryptText("Secret", "Hello");
