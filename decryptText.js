@@ -1,3 +1,23 @@
+const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+const decryptMessage = (key, cipherText) => {
+    let decryptedMessage = "";
+    let secretKeyCount = 0;
+
+    for (let i = 0; i < cipherText.length; i++) {
+        if (secretKeyCount >= key.length) {
+            secretKeyCount = 0;
+        }
+        const cipherLetterNumber = alphabet.indexOf(cipherText[i]);
+        const keyLetterToNumber = alphabet.indexOf(key[secretKeyCount]);
+        
+        let plainNumber = (cipherLetterNumber - keyLetterToNumber + 26) % 26;
+        decryptedMessage += alphabet[plainNumber];
+        secretKeyCount++;
+    }
+    
+    return decryptedMessage;
+}
 
 const decryptText = (key, cipherText) => {
     cipherText = cipherText.toUpperCase();
