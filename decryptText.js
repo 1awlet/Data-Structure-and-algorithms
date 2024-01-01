@@ -32,3 +32,5 @@ const decryptText = (key, cipherText) => {
     console.log(decryptedText);
     return decryptedText;
 }
+
+encryptText("”THISISANEXAMPLEKEYINCOMPUTERSECURITYEXAM”", "Gele");
