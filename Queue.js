@@ -37,4 +37,12 @@ class Queue {
         return this.items.length;
     }
 
+      // Prints the elements in the queue
+    printQueue() {
+        let elements = "";
+        for (let item of this.items) {
+            elements += item + " ";
+        }
+        console.log(elements);
+    }
 }
