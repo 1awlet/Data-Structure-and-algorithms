@@ -46,3 +46,10 @@ class Queue {
         console.log(elements);
     }
 }
+
+
+let myQueue = new Queue();
+myQueue.enqueue(1);
+myQueue.enqueue(2);
+myQueue.enqueue(3);
+console.log("Front item is: " + myQueue.front());
