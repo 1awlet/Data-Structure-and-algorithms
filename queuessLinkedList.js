@@ -39,6 +39,21 @@ class Queue {
         this.size--;
         return temp.value;
     }
+
+
+      peek() {
+        if (this.isEmpty()) {
+            console.log("Queue is empty!");
+            return null;
+        }
+        return this.front.value;
+    }
+
+    // Checks if the queue is empty
+    isEmpty() {
+        return this.size === 0;
+    }
+
 }
 
 }
