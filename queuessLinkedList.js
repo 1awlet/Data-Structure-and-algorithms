@@ -66,3 +66,13 @@ class Queue {
 }
 
 }
+
+let myQueue = new Queue();
+myQueue.enqueue(1);
+myQueue.enqueue(2);
+myQueue.enqueue(3);
+console.log("Front item is: " + myQueue.peek());
+myQueue.printQueue();
+myQueue.dequeue();
+console.log("After dequeue:");
+myQueue.printQueue();
