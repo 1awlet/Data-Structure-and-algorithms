@@ -53,7 +53,16 @@ class Queue {
     isEmpty() {
         return this.size === 0;
     }
-
+ // Prints the elements in the queue
+    printQueue() {
+        let current = this.front;
+        let str = '';
+        while (current) {
+            str += current.value + ' ';
+            current = current.next;
+        }
+        console.log(str);
+    }
 }
 
 }
