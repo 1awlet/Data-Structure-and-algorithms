@@ -12,6 +12,33 @@ class Queue {
         this.size = 0;
     }
 
+
+     // Adds an element to the back of the queue
+    enqueue(value) {
+        let newNode = new Node(value);
+        if (this.rear === null) {
+            this.front = this.rear = newNode;
+        } else {
+            this.rear.next = newNode;
+            this.rear = newNode;
+        }
+        this.size++;
+    }
+
+    // Removes and returns the element at the front of the queue
+    dequeue() {
+        if (this.front === null) {
+            console.log("Queue is empty!");
+            return null;
+        }
+        let temp = this.front;
+        this.front = this.front.next;
+        if (this.front === null) {
+            this.rear = null;
+        }
+        this.size--;
+        return temp.value;
+    }
 }
 
 }
