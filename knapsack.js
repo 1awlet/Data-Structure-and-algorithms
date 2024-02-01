@@ -26,3 +26,11 @@ function knapsack(values, weights, capacity) {
 
 
 }
+
+
+const values = [60, 100, 120];
+const weights = [10, 20, 30];
+const capacity = 50;
+
+console.log("Maximum value in knapsack =", knapsack(values, weights, capacity));
+
