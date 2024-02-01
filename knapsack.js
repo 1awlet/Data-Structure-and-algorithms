@@ -4,7 +4,25 @@ function knapsack(values, weights, capacity) {
     // using the first i items and capacity j
     const dp = Array.from({ length: n + 1 }, () => Array(capacity + 1).fill(0));
 
+    // Build the dp array from bottom up
+    for (let i = 1; i <= n; i++) {
+        for (let w = 1; w <= capacity; w++) {
+            // If including the current item would not exceed the capacity,
+            // check if adding it would be beneficial
+            if (weights[i - 1] <= w) {
+                dp[i][w] = Math.max(
+                    dp[i - 1][w], 
+                    dp[i - 1][w - weights[i - 1]] + values[i - 1]
+                );
+            } else {
+                // If the current item is too heavy, can't include it
+                dp[i][w] = dp[i - 1][w];
+            }
+        }
+    }
 
+    // The bottom right corner of the dp array contains the maximum value
+    return dp[n][capacity];
 
 
 }
