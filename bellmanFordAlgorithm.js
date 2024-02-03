@@ -30,3 +30,17 @@ function bellmanFord(graph, V, E, src) {
     return dist;
 
 }
+
+
+const V = 5; 
+const E = 8; 
+const graph = [
+    [0, 1, -1],
+    [0, 2, 4],
+    [1, 2, 3],
+    [1, 3, 2],
+    [1, 4, 2],
+    [3, 2, 5],
+    [3, 1, 1],
+    [4, 3, -3]
+];
