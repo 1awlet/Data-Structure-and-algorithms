@@ -16,4 +16,17 @@ function bellmanFord(graph, V, E, src) {
         }
     }
 
+
+    for (let i = 0; i < E; i++) {
+        let u = graph[i][0];
+        let v = graph[i][1];
+        let weight = graph[i][2];
+        if (dist[u] !== Infinity && dist[u] + weight < dist[v]) {
+            console.log("Graph contains negative weight cycle");
+            return;
+        }
+    }
+
+    return dist;
+
 }
