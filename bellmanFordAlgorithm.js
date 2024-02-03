@@ -44,3 +44,14 @@ const graph = [
     [3, 1, 1],
     [4, 3, -3]
 ];
+
+
+const src = 0; 
+const distances = bellmanFord(graph, V, E, src);
+
+if (distances) {
+    console.log("Vertex Distance from Source");
+    distances.forEach((distance, index) => {
+        console.log(`${index} \t\t ${distance}`);
+    });
+}
