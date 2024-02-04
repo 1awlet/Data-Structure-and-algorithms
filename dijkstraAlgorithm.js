@@ -21,4 +21,13 @@ class PriorityQueue {
         }
     }
 
+
+    dequeue() {
+        return this.collection.shift();
+    }
+
+    isEmpty() {
+        return this.collection.length === 0;
+    }
+
 }
