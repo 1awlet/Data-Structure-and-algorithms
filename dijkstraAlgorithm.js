@@ -31,3 +31,34 @@ class PriorityQueue {
     }
 
 }
+function dijkstraAlgorithm(graph, startVertex) {
+    const distances = {};
+    const prev = {};
+    const pq = new PriorityQueue();
+
+    // Initialization
+    for (let vertex in graph) {
+        if (vertex == startVertex) {
+            distances[vertex] = 0;
+            pq.enqueue([vertex, 0]);
+        } else {
+            distances[vertex] = Infinity;
+        }
+        prev[vertex] = null;
+    }
+
+    while (!pq.isEmpty()) {
+        let [currentVertex, currentDistance] = pq.dequeue();
+
+        for (let neighbor in graph[currentVertex]) {
+            let distance = currentDistance + graph[currentVertex][neighbor];
+            if (distance < distances[neighbor]) {
+                distances[neighbor] = distance;
+                prev[neighbor] = currentVertex;
+                pq.enqueue([neighbor, distance]);
+            }
+        }
+    }
+
+    return { distances, prev };
+}
