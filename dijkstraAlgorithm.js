@@ -69,3 +69,8 @@ const graph = {
     D: {B: 5, C: 1}
 };
 
+const startVertex = 'A';
+const shortestPaths = dijkstraAlgorithm(graph, startVertex);
+
+console.log("Shortest distances: ", shortestPaths.distances);
+console.log("Previous vertices: ", shortestPaths.prev);
