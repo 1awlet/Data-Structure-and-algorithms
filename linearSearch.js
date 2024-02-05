@@ -7,3 +7,6 @@ function linearSearch(arr, target) {
     }
     return -1; 
 }
+
+const numbers = [2, 3, 5, 7, 11, 13, 17];
+const target = 7;
