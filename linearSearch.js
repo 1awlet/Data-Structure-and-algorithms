@@ -10,3 +10,12 @@ function linearSearch(arr, target) {
 
 const numbers = [2, 3, 5, 7, 11, 13, 17];
 const target = 7;
+
+
+const result = linearSearch(numbers, target);
+
+if (result !== -1) {
+    console.log(`Element found at index: ${result}`);
+} else {
+    console.log("Element not found in the array.");
+}
