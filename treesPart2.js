@@ -40,4 +40,23 @@ class BinarySearchTree {
         }
     }
 
+
+     // Search for a node with a given value
+    search(value) {
+        return this._searchNode(this.root, value);
+    }
+
+    _searchNode(node, value) {
+        if (node === null) {
+            return false;
+        }
+        if (value < node.value) {
+            return this._searchNode(node.left, value);
+        } else if (value > node.value) {
+            return this._searchNode(node.right, value);
+        } else {
+            return true; // Value is found
+        }
+    }
+
 }
