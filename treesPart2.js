@@ -72,4 +72,30 @@ class BinarySearchTree {
         }
     }
 
+     // Pre-order traversal: root, left, right
+    preOrderTraverse(callback) {
+        this._preOrderTraverseNode(this.root, callback);
+    }
+
+    _preOrderTraverseNode(node, callback) {
+        if (node !== null) {
+            callback(node.value);
+            this._preOrderTraverseNode(node.left, callback);
+            this._preOrderTraverseNode(node.right, callback);
+        }
+    }
+
+    // Post-order traversal: left, right, root
+    postOrderTraverse(callback) {
+        this._postOrderTraverseNode(this.root, callback);
+    }
+
+    _postOrderTraverseNode(node, callback) {
+        if (node !== null) {
+            this._postOrderTraverseNode(node.left, callback);
+            this._postOrderTraverseNode(node.right, callback);
+            callback(node.value);
+        }
+    }
+
 }
