@@ -59,4 +59,17 @@ class BinarySearchTree {
         }
     }
 
+
+    nOrderTraverse(callback) {
+        this._inOrderTraverseNode(this.root, callback);
+    }
+
+    _inOrderTraverseNode(node, callback) {
+        if (node !== null) {
+            this._inOrderTraverseNode(node.left, callback);
+            callback(node.value);
+            this._inOrderTraverseNode(node.right, callback);
+        }
+    }
+
 }
