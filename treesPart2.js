@@ -99,3 +99,29 @@ class BinarySearchTree {
     }
 
 }
+
+
+
+const bst = new BinarySearchTree();
+bst.insert(8);
+bst.insert(3);
+bst.insert(10);
+bst.insert(1);
+bst.insert(6);
+bst.insert(14);
+bst.insert(4);
+bst.insert(7);
+bst.insert(13);
+
+console.log("In-order traversal:");
+bst.inOrderTraverse(value => console.log(value));
+
+console.log("Pre-order traversal:");
+bst.preOrderTraverse(value => console.log(value));
+
+console.log("Post-order traversal:");
+bst.postOrderTraverse(value => console.log(value));
+
+// Search for a value
+console.log("Search for 10:", bst.search(10)); 
+console.log("Search for 2:", bst.search(2)); 
