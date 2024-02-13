@@ -21,5 +21,18 @@ class MinHeap {
     this.heap[index1] = this.heap[index2];
     this.heap[index2] = temp;
   }
+
+
+  peek() {
+    if (this.heap.length === 0) {
+      return null;
+    }
+    return this.heap[0];
+  }
+
+  insert(value) {
+    this.heap.push(value);
+    this.heapifyUp();
+  }
   
 }
