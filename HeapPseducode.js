@@ -52,3 +52,8 @@ function maxHeapify(heap, index) {
     }
 }
 
+function swap(heap, i, j) {
+    let temp = heap[i];
+    heap[i] = heap[j];
+    heap[j] = temp;
+}
