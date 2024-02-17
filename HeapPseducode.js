@@ -30,3 +30,25 @@ function extractMax(heap) {
     maxHeapify(heap, 0);
     return max;
 }
+
+
+
+function maxHeapify(heap, index) {
+    let left = 2 * index + 1;
+    let right = 2 * index + 2;
+    let largest = index;
+
+    if (left < heap.length && heap[left] > heap[largest]) {
+        largest = left;
+    }
+
+    if (right < heap.length && heap[right] > heap[largest]) {
+        largest = right;
+    }
+
+    if (largest !== index) {
+        swap(heap, index, largest);
+        maxHeapify(heap, largest);
+    }
+}
+
