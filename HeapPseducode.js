@@ -72,5 +72,10 @@ function increaseKey(heap, index, value) {
         throw new Error('New value is smaller than the current value.');
     }
 
+    heap[index] = value;
+    while (index > 0 && heap[Math.floor((index - 1) / 2)] < heap[index]) {
+        swap(heap, index, Math.floor((index - 1) / 2));
+        index = Math.floor((index - 1) / 2);
+    }
 
 }
