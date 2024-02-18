@@ -57,3 +57,12 @@ function swap(heap, i, j) {
     heap[i] = heap[j];
     heap[j] = temp;
 }
+
+
+function deleteNode(heap, index) {
+  
+    increaseKey(heap, index, Infinity);
+
+    extractMax(heap);
+}
+
