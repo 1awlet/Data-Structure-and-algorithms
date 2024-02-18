@@ -66,3 +66,11 @@ function deleteNode(heap, index) {
     extractMax(heap);
 }
 
+
+function increaseKey(heap, index, value) {
+    if (value < heap[index]) {
+        throw new Error('New value is smaller than the current value.');
+    }
+
+
+}
