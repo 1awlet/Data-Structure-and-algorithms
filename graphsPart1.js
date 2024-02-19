@@ -13,7 +13,7 @@ class Graph {
     if (!this.adjacencyList[v1]) this.addVertex(v1);
     if (!this.adjacencyList[v2]) this.addVertex(v2);
     this.adjacencyList[v1].push(v2);
-    this.adjacencyList[v2].push(v1); // Omit this line for a directed graph
+    this.adjacencyList[v2].push(v1);
   }
 
 
