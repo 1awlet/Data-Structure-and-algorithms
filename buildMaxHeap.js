@@ -25,3 +25,8 @@ function maxHeapify(A, heapSize, i) {
         maxHeapify(A, heapSize, largest);
     }
 }
+
+// SHould output max heap
+let A = [4, 1, 3, 2, 16, 9, 10, 14, 8, 7];
+buildMaxHeap(A);
+console.log(A);
