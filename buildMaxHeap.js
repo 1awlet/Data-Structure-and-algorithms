@@ -4,3 +4,24 @@ function buildMaxHeap(A) {
         maxHeapify(A, heapSize, i);
     }
 }
+
+
+
+function maxHeapify(A, heapSize, i) {
+    let largest = i;
+    let left = 2 * i + 1;
+    let right = 2 * i + 2;
+
+    if (left < heapSize && A[left] > A[largest]) {
+        largest = left;
+    }
+
+    if (right < heapSize && A[right] > A[largest]) {
+        largest = right;
+    }
+
+    if (largest != i) {
+        [A[i], A[largest]] = [A[largest], A[i]];
+        maxHeapify(A, heapSize, largest);
+    }
+}
