@@ -1,7 +1,6 @@
-
-function BUILD-MAX-HEAP(A)
-    heap_size = A.length
-    for  FLOOR(heap_size/2) > j >=0
-        MAX-HEAPIFY(A, j)
-    end for
-end function
+function buildMaxHeap(A) {
+    let heapSize = A.length;
+    for (let i = Math.floor(heapSize / 2) - 1; i >= 0; i--) {
+        maxHeapify(A, heapSize, i);
+    }
+}
