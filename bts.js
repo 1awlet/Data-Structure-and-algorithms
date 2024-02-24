@@ -48,3 +48,16 @@ class BinarySearchTree {
   }
 
 }
+
+
+
+const bst = new BinarySearchTree();
+bst.insert(15);
+bst.insert(25);
+bst.insert(10);
+bst.insert(7);
+bst.insert(22);
+bst.insert(17);
+
+console.log("Inorder traversal of binary search tree:");
+bst.inOrderTraverse();
