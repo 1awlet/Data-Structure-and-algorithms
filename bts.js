@@ -37,4 +37,14 @@ class BinarySearchTree {
     }
   }
 
+
+  // Method  helpz with visualize the tree structure in the console
+  inOrderTraverse(node = this.root) {
+    if (node !== null) {
+      this.inOrderTraverse(node.left);
+      console.log(node.data);
+      this.inOrderTraverse(node.right);
+    }
+  }
+
 }
