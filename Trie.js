@@ -48,3 +48,13 @@ class Trie {
     return true;
   }
 }
+
+
+
+const trie = new Trie();
+trie.insert("hello");
+trie.insert("helium");
+
+console.log(trie.search("hello"));
+console.log(trie.search("hel")); 
+console.log(trie.startsWith("hel")); 
