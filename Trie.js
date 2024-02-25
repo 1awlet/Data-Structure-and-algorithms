@@ -5,4 +5,33 @@ class TrieNode {
   }
 }
 
+class Trie {
+  constructor() {
+    this.root = new TrieNode();
+  }
+
+   // Inserts a word into the trie
+  insert(word) {
+    let node = this.root;
+    for (let char of word) {
+      if (!node.children[char]) {
+        node.children[char] = new TrieNode();
+      }
+      node = node.children[char];
+    }
+    node.isEndOfWord = true;
+  }
+
+  // Searches if the word is in the trie
+  search(word) {
+    let node = this.root;
+    for (let char of word) {
+      if (!node.children[char]) {
+        return false;
+      }
+      node = node.children[char];
+    }
+    return node.isEndOfWord;
+  }
+  
 }
