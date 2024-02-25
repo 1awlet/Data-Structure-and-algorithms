@@ -33,5 +33,18 @@ class Trie {
     }
     return node.isEndOfWord;
   }
-  
+
+
+
+   // Returns if there is any word in the trie that starts with the given prefix
+  startsWith(prefix) {
+    let node = this.root;
+    for (let char of prefix) {
+      if (!node.children[char]) {
+        return false;
+      }
+      node = node.children[char];
+    }
+    return true;
+  }
 }
