@@ -23,3 +23,21 @@ function primMST(graph) {
 
   return T;
 }
+
+
+function Graph(vertices, edges) {
+  this.vertices = vertices || [];
+  this.edges = edges || [];
+
+  // Adds a vertex if it does not exist
+  this.addVertex = function(vertex) {
+    if (!this.vertices.includes(vertex)) {
+      this.vertices.push(vertex);
+    }
+  };
+
+  // Adds an edge
+  this.addEdge = function(edge) {
+    this.edges.push(edge);
+  };
+}
