@@ -60,3 +60,18 @@ class Graph {
         return mst;
     }
 }
+let g = new Graph(['A', 'B', 'C', 'D', 'E', 'F', 'G']);
+g.addEdge('A', 'B', 7);
+g.addEdge('A', 'D', 5);
+g.addEdge('B', 'C', 8);
+g.addEdge('B', 'D', 9);
+g.addEdge('B', 'E', 7);
+g.addEdge('C', 'E', 5);
+g.addEdge('D', 'E', 15);
+g.addEdge('D', 'F', 6);
+g.addEdge('E', 'F', 8);
+g.addEdge('E', 'G', 9);
+g.addEdge('F', 'G', 11);
+
+let mst = g.kruskalMST();
+console.log(mst);
