@@ -22,3 +22,41 @@ class DisjointSet {
     }
 }
 
+class Edge {
+    constructor(from, to, weight) {
+        this.from = from;
+        this.to = to;
+        this.weight = weight;
+    }
+}
+
+class Graph {
+    constructor(vertices) {
+        this.vertices = vertices;
+        this.edges = [];
+    }
+
+    addEdge(from, to, weight) {
+        this.edges.push(new Edge(from, to, weight));
+    }
+
+    kruskalMST() {
+        let mst = new Graph(this.vertices);
+        let ds = new DisjointSet();
+
+        this.vertices.forEach(vertex => ds.makeSet(vertex));
+        this.edges.sort((a, b) => a.weight - b.weight);
+
+        this.edges.forEach(edge => {
+            let root1 = ds.find(edge.from);
+            let root2 = ds.find(edge.to);
+
+            if (root1 !== root2) {
+                mst.addEdge(edge.from, edge.to, edge.weight);
+                ds.union(root1, root2);
+            }
+        });
+
+        return mst;
+    }
+}
