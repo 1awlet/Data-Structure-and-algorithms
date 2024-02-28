@@ -29,3 +29,51 @@ class PriorityQueue {
     return this.collection.length === 0;
   }
 }
+
+
+
+function dijkstra(graph, startNode, endNode) {
+  let distances = {};
+  let prev = {};
+  let pq = new PriorityQueue();
+  
+  // Initialize distances and pq
+  for (let node in graph) {
+    if (node === startNode) {
+      distances[node] = 0;
+      pq.enqueue([node, 0]);
+    } else {
+      distances[node] = Infinity;
+    }
+    prev[node] = null;
+  }
+  
+  while (!pq.isEmpty()) {
+    let [smallest, smallestDist] = pq.dequeue();
+    
+    if (smallest === endNode) {
+      // We found the end node, reconstruct the path
+      let path = [];
+      while (prev[smallest]) {
+        path.push(smallest);
+        smallest = prev[smallest];
+      }
+      path.push(startNode);
+      return path.reverse();
+    }
+    
+    if (smallest || distances[smallest] !== Infinity) {
+      for (let neighbor in graph[smallest]) {
+        let alt = distances[smallest] + graph[smallest][neighbor];
+        if (alt < distances[neighbor]) {
+          distances[neighbor] = alt;
+          prev[neighbor] = smallest;
+          pq.enqueue([neighbor, distances[neighbor]]);
+        }
+      }
+    }
+  }
+
+  return distances;
+}
+
