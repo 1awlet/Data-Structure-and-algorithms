@@ -14,3 +14,9 @@ function uniqueOccurrences(arr) {
     // Check if the length of counts array is the same as the uniqueCounts Set
     return counts.length === uniqueCounts.size;
 }
+
+
+console.log(uniqueOccurrences([1,2,2,1,1,3])); 
+console.log(uniqueOccurrences([1,2]));
+
+
