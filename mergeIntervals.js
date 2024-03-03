@@ -14,3 +14,5 @@ function mergeIntervals(intervals) {
     
     return mergedIntervals;
 }
+console.log(mergeIntervals([[1,3],[2,6],[8,10],[15,18]])); 
+console.log(mergeIntervals([[1,4],[4,5]]));
