@@ -26,3 +26,10 @@ function posMin(arr, start, end) {
     }
     return minPos;
 }
+
+
+let array = [64, 25, 12, 22, 11];
+console.log('Unsorted array:', array);
+
+selectionSort(array);
+console.log('Sorted array:', array);
