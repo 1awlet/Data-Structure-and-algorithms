@@ -15,3 +15,14 @@ function selectionSort(arr) {
     }
 
 }
+
+
+function posMin(arr, start, end) {
+    let minPos = start;
+    for (let i = start + 1; i <= end; i++) {
+        if (arr[i] < arr[minPos]) {
+            minPos = i;
+        }
+    }
+    return minPos;
+}
