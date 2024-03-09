@@ -35,3 +35,6 @@ function radixSort(arr) {
   }
 }
 
+let arr = [170, 45, 75, 90, 802, 24, 2, 66];
+radixSort(arr);
+console.log(arr);
