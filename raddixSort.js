@@ -19,5 +19,10 @@ for (i = 1; i < 10; i++) {
     count[Math.floor(arr[i] / exp) % 10]--;
   }
 
+  for (i = 0; i < arr.length; i++) {
+    arr[i] = output[i];
+  }
+  
+
 }
 
