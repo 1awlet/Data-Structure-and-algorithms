@@ -26,3 +26,12 @@ for (i = 1; i < 10; i++) {
 
 }
 
+function radixSort(arr) {
+  // Finds the maximum number to determine the number of digits
+  let m = Math.max(...arr);
+
+  for (let exp = 1; Math.floor(m / exp) > 0; exp *= 10) {
+    countingSortForRadix(arr, exp);
+  }
+}
+
