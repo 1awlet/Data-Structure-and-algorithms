@@ -12,3 +12,14 @@ Function createTargetArray(values, indices):
         
     Return targetArray
 
+
+
+function createTargetArray(nums, index) {
+    let target = [];
+    for (let i = 0; i < nums.length; i++) {
+        // Insert the element at the specified index
+        target.splice(index[i], 0, nums[i]);
+    }
+    return target;
+}
+
