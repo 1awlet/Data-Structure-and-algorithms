@@ -23,3 +23,6 @@ function createTargetArray(nums, index) {
     return target;
 }
 
+const nums = [0,1,2,3,4];
+const index = [0,1,2,2,1];
+console.log(createTargetArray(nums, index));
