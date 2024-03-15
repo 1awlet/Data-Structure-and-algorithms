@@ -52,3 +52,6 @@ function insertionSort(arr) {
     }
 }
 
+const unsortedArray = [29, 13, 22, 37, 52, 49, 46, 71, 56];
+const sortedArray = bucketSort(unsortedArray);
+console.log(sortedArray);
