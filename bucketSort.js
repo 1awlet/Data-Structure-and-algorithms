@@ -27,4 +27,14 @@ function bucketSort(arr, bucketSize = 5) {
         buckets[bucketIndex].push(arr[i]);
     }
 
+
+     // Sort individual buckets and concatenate them
+    const sortedArray = [];
+    for (let i = 0; i < buckets.length; i++) {
+        insertionSort(buckets[i]);  
+        sortedArray.push(...buckets[i]);  
+    }
+
+    return sortedArray;
+
 }
