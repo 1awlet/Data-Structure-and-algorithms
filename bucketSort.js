@@ -14,6 +14,17 @@ function bucketSort(arr, bucketSize = 5) {
         }
     }
 
+ // Calculate the number of buckets needed and initialize buckets
+    const bucketCount = Math.floor((maxValue - minValue) / bucketSize) + 1;
+    const buckets = new Array(bucketCount);
+    for (let i = 0; i < buckets.length; i++) {
+        buckets[i] = [];
+    }
 
+    // Distribute elements into buckets
+    for (let i = 0; i < arr.length; i++) {
+        const bucketIndex = Math.floor((arr[i] - minValue) / bucketSize);
+        buckets[bucketIndex].push(arr[i]);
+    }
 
 }
