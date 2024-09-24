@@ -28,3 +28,18 @@ void printArray(const vector<int>& arr) {
     }
     cout << endl;
 }
+
+
+int main() {
+    vector<int> arr = {64, 25, 12, 22, 11};
+
+    cout << "Original array: ";
+    printArray(arr);
+
+    selectionSort(arr);
+
+    cout << "Sorted array: ";
+    printArray(arr);
+
+    return 0;
+}
